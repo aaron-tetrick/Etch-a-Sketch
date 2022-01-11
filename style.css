@@ -7,6 +7,7 @@
 body {
     display: flex;
     flex-direction: column;
+    background-color: rgb(201, 198, 198);
 }
 
 
@@ -17,6 +18,26 @@ h1 {
     margin-bottom: 50px;
 }
 
+#grid-btn-parent {
+    display: flex;
+    justify-content: center;
+}
+
+#grid-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    margin: 30px;
+    padding: 20px;
+    border: solid 3px black;
+    border-radius: 15px;;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+}
+
 #parent {
     display: flex;
     flex-direction: column;
@@ -24,11 +45,14 @@ h1 {
 }
 
 .button {
-    width: 75px;
+    width: 90px;
     height: 50px;
     margin: 50px;
     border: solid 3px black;
+    border-radius: 15px;;
     font-size: 20px;
+    background-color: white;
+    color: black;
 
 }
 
@@ -37,41 +61,53 @@ h1 {
     justify-content: center;
 }
 
-.button-styling {
+.button-styling-clear {
     border: solid 5px black;
     font-weight: bold;
+}
+.button-styling-white {
+    border: solid 5px black;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+}
+.button-styling-black {
+    border: solid 5px black;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+}
+.button-styling-rainbow {
+    border: solid 5px black;
+    font-weight: bold;
+    color: red;
 }
 
 
 #parent {
-    display: flex;
+    display: grid;
     justify-content: center;
 }
 
-#container {
+#grid-container {
     border: solid 3px green;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns:repeat(16, 0fr);
+    justify-content: center;
+    width: 960px;
 }
 
 .box-style {
     justify-content: center;
     align-items: center;
     background-color: white;
-    height: 15px;
-    width: 15px;
+    height: 35px;
+    width: 35px;
     border: solid 1px black;
     margin: 0;
 }
 
+box-style:hover {
+    background-color: rgb(190, 190, 190);
 
-.box-style2 {
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    height: 15px;
-    width: 15px;
-    border: solid 1px black;
-    margin: 0;
 }
