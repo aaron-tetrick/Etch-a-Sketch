@@ -7,20 +7,29 @@
 body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(201, 198, 198);
 }
 
-
+/* Typescript */
 h1 {
     color: gold;
     text-align: center;
     background-color: darkslategrey;
-    margin-bottom: 50px;
+    margin-bottom: 25;
+    width: 100%;
+    padding: 20px;
 }
 
+
+/* Buttons */
+
+    /* Grid Button */
 #grid-btn-parent {
     display: flex;
     justify-content: center;
+    border: solid 2px red;
 }
 
 #grid-btn {
@@ -38,27 +47,26 @@ h1 {
     color: black;
 }
 
-#parent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
+/* Color Buttons */
 .button {
     width: 90px;
     height: 50px;
     margin: 50px;
     border: solid 3px black;
-    border-radius: 15px;;
+    border-radius: 5px;
     font-size: 20px;
-    background-color: white;
+    background-color: rgb(4, 115, 206);
     color: black;
 
+}
+.button:hover {
+    border: solid 3px white;
 }
 
 #buttons {
     display: flex;
     justify-content: center;
+    border: solid 3px peru;
 }
 
 .button-styling-clear {
@@ -83,18 +91,39 @@ h1 {
     color: red;
 }
 
-
-#parent {
-    display: grid;
-    justify-content: center;
+#rainbow {
+    box-shadow: 3px 3px 3px 3px;
 }
+
+#rainbow:hover {
+     box-shadow: 3px 3px 3px 3px orange;
+}
+
+
+
+/*
+
+Grid and Grid Container
+
+-Positioning
+-Max-width
+-width/height: auto
+-width/height: 100%
+-
+
+
+I want my grid/grid container to remain the same size no matter how many boxes it contains
+I want my boxes to be sized relative to the amount of boxes (More boxes = smaller the box)
+
+*/
 
 #grid-container {
     border: solid 3px green;
     display: grid;
-    grid-template-columns:repeat(16, 0fr);
     justify-content: center;
-    width: 960px;
+    width: 500px;
+    height: 500px;
+
 }
 
 .box-style {
@@ -103,11 +132,43 @@ h1 {
     background-color: white;
     height: 35px;
     width: 35px;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     margin: 0;
+    gap: 0;
 }
 
-box-style:hover {
+
+
+.box-style:hover {
     background-color: rgb(190, 190, 190);
 
 }
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    padding: 15px;
+}
+
+footer > p {
+    font-family: Lato;
+    justify-content:flex-end;
+    align-items: flex-end;
+    font-size: 15px;
+ 
+
+}
+
+#signature {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+

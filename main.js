@@ -9,6 +9,7 @@ let white = document.getElementById('white');
 let black = document.getElementById('black');
 let rainbow = document.getElementById('rainbow');
 let buttons = document.getElementsByClassName('button');
+let slider = document.getElementById('slider');
 
 
 
@@ -18,37 +19,34 @@ let buttons = document.getElementsByClassName('button');
 gridSizeBtn.onclick = () => gridSize();
 
     function gridSize() {
-        let value = prompt("Enter the size of the grid for each side (Max: 64)");
-
+        //let value = prompt("Enter the size of the grid for each side (Max: 64)");
+        let value = 8
 if (typeof Number(value) !== 'number' || isNaN(value) || value > 16 || value < 1) {
-        console.log("This number does not work");
     } else {
-        console.log("This number works!", typeof value, Number(value));
         return value;
     }
-
 }
 
-//let size = gridSize();
-//console.log(size);
-
+let size = 8//gridSize();
+console.log(size);
 
 //Instead of making all the boxes with one loop. Make each row seperately.
-for (i = 0; i < (256); i++) {
+for (i = 0; i < (size*size); i++) {
     let box = document.createElement('div');
     box.classList.add("box-style");
-   // document.getElementsByClassName('box-style');
+    container.style.gridTemplateColumns = `repeat(${size}, 0fr)`;
+  // document.getElementsByClassName('box-style');
    container.appendChild(box);
-
-
 
 
 //Event Listeners for button selections
 clear.addEventListener('click', clearBoard);
 white.addEventListener('click', makeWhite);
 black.addEventListener('click', makeBlack);
-rainbow.addEventListener('click', makeRainbow);
 
+
+
+rainbow.onclick = makeRainbow;
 
 
 //Function to clear the board
@@ -85,6 +83,7 @@ function clearBoard() {
         
 }
 
+
 //Function to make rainbow background
     function makeRainbow() { 
         rainbow.onclick = pressButton(3);
@@ -92,7 +91,7 @@ function clearBoard() {
 
 
         function hoverRainbow() {
-            box.style.backgroundColor = `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`;
+            box.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
             box.style.transition = "0.5s"
     }    
 }
@@ -129,8 +128,11 @@ function pressButton(x) {
     buttons[1].classList.remove('button-styling-white');
     buttons[2].classList.remove('button-styling-black');
     buttons[3].classList.add('button-styling-rainbow');
-    buttons[3].style.color = `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`;
+    buttons[3].style.color = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
+    }
 }
+
 }
- 
-}
+
+
+
